@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PathPilot - Shortest Path Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>PathPilot</h1>
+    <p>Shortest Path Finder using Dijkstra's Algorithm</p>
+  </header>
+
+  <section class="tool">
+   <div class="toolbar">
+  <div class="button-grid">
+    <button id="btnNode" class="active">Add Node</button>
+    <button id="btnEdge">Add Edge</button>
+    
+    <button id="btnStart">Set Start</button>
+    <button id="btnEnd">Set End</button>
+    
+    <button id="btnRun">Find Path</button>
+    <button id="btnReset">Reset</button>
+  </div>
+</div>
+
+    <p id="status">Click on the map below to add a node.</p>
+
+    <div id="graphArea">
+      <svg id="edgeLayer"></svg>
+    </div>
+
+    <div id="modalBackdrop">
+      <div class="modal">
+        <p>Enter distance for this edge:</p>
+        <input type="number" id="weightInput" min="1" value="10">
+        <div class="modal-buttons">
+          <button id="modalCancel">Cancel</button>
+          <button id="modalConfirm">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="result"></div>
+  </section> 
+
+<section class="instructions">
+    <h2>How to Use</h2>
+    <ol>
+      <li>Click <b>Add Node</b>, then click on the map to place waypoints.</li>
+      <li>Click <b>Add Edge</b>, then click two nodes to connect them (you'll be asked for a distance).</li>
+      <li>Click <b>Set Start</b> and pick your starting node.</li>
+      <li>Click <b>Set End</b> and pick your destination node.</li>
+      <li>Click <b>Find Path</b> to run the algorithm and see the shortest route.</li>
+    </ol>
+  </section>
+
+  <section class="about">
+    <h2>About Dijkstra's Algorithm</h2>
+    <p>Dijkstra's algorithm finds the shortest path between nodes in a graph. It works by visiting the closest unvisited node, updating distances to its neighbors, and repeating until the destination is reached.</p>
+    <p><b>Time Complexity:</b> O((V + E) log V) using a priority queue.</p>
+  </section>
+
+  <!-- <section class="cpp">
+    <h2>C++ / DSA Part</h2>
+    <p>The same algorithm is implemented in C++ in <b>dijkstra.cpp</b>, using an adjacency list and a priority queue (min-heap). This is the real DSA implementation — run it from a terminal:</p>
+    <ol>
+      <li>Open a terminal in this project folder.</li>
+      <li>Compile: <pre>g++ dijkstra.cpp -o dijkstra</pre></li>
+      <li>Run: <pre>./dijkstra</pre> (on Windows: <pre>dijkstra.exe</pre>)</li>
+      <li>Enter the number of nodes, number of edges, each edge as <code>source destination weight</code>, then the source and destination node.</li>
+    </ol>
+    <p>The website above runs the same logic in JavaScript so you can see it visually — the terminal program is the actual C++/DSA submission.</p>
+  </section> -->
+
+  <footer>
+    <p>PathPilot &mdash; Built with C++ (DSA) and HTML/CSS/JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
